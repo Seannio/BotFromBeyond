@@ -8,7 +8,7 @@ import csv
 TOKEN = 'Njk2ODY2NjU0Mzc4MDAwNTE0.Xou-Ow.AeKpqluEziS_ZcSkd5Bw3oi1TIM'
 client = discord.Client()
 
-# Open the stupid plethora of files 
+# Open the giant text file!
 with open("corpus.txt") as f:  
     text = f.read()
     model = markovify.Text(text)
@@ -27,7 +27,7 @@ async def on_message(message):
 
     # Main markov chain generator. Mostly worthless. 
     if message.content == '$summon':
-        response = model.make_short_sentence(450)
+        response = model.make_short_sentence(450) # Change this to edit length of return. Kinda' broken. 
         await message.channel.send(response)
     
     if "Cthulhu" in message.content:
